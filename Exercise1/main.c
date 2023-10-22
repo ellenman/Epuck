@@ -18,6 +18,11 @@ MUTEX_DECL(bus_lock);
 CONDVAR_DECL(bus_condvar);
 
 
+
+/*
+Try if sprintf prints on the console 
+*/
+
 int main(void)
 {
 
