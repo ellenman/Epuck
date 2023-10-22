@@ -112,8 +112,8 @@ int main(void)
       proximity_start();
       serial_start();
 
-      double left_speed = MAX_SPEED;
-      double right_speed = MAX_SPEED;
+      int left_speed = MAX_SPEED;
+      int right_speed = MAX_SPEED;
 
       if(objectOnTheRight()){
         left_speed = MAX_SPEED;
