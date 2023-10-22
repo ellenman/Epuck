@@ -34,6 +34,8 @@ void bodyLedOff(){
   set_body_led(0);
 }
 
+
+/*
 void moveForward(){
   left_motor_set_speed(MAX_SPEED);
   right_motor_set_speed(MAX_SPEED);
@@ -53,15 +55,19 @@ void stop(){
   left_motor_set_speed(0);
   right_motor_set_speed(0);
 }
+*/
+
+/*
+Check the values of the proximity sensors might have to be 80
+*/
 
 bool objectOnTheRight(){
   bool detectObjectOnTheRight = false;
   int prox0 = get_prox(0);
   int prox1 = get_prox(1);
   int prox2 = get_prox(2);
-  int prox3 = get_prox(3);
 
-  if(prox0 > 75 || prox1 > 75 || prox2 > 75 || prox3 > 75 ){
+  if(prox0 > 75 || prox1 > 75 || prox2 > 75 ){
     detectObjectOnTheRight = true;
   }
 
@@ -71,20 +77,17 @@ bool objectOnTheRight(){
 
 bool objectOnTheLeft(){
   bool detectObjectOnTheLeft = false;
-  int prox4 = get_prox(4);
   int prox5 = get_prox(5);
   int prox6 = get_prox(6);
   int prox7 = get_prox(7);
 
-  if(prox4 > 75 || prox5 > 75 || prox6 > 75 || prox7 > 75 ){
+  if(prox5 > 75 || prox6 > 75 || prox7 > 75 ){
     detectObjectOnTheLeft = true;
   }
 
   return detectObjectOnTheLeft;
 
 }
-
-
 
 
 int main(void)
@@ -103,25 +106,27 @@ int main(void)
       int messageForRight, messageForLeft, messageForward;
       messageForRight = sprintf(str, "Object found on the right side");
       messageForLeft = sprintf(str, "Object found on the left side");
-      messageForward = sprintf(str, "Move Forward");
 
     	//waits 1 second
       //chThdSleepMilliseconds(1000);
       proximity_start();
       serial_start();
+
+      double left_speed = MAX_SPEED;
+      double right_speed = MAX_SPEED;
+
       if(objectOnTheRight()){
-        //turnLeft()
+        left_speed = MAX_SPEED;
+        right_speed = -MAX_SPEED;
         e_send_uart1_char(str, messageForRight);
       }
       else if(objectOnTheLeft()){
-        //turnRight()
+        left_speed = -MAX_SPEED;
+        right_speed = MAX_SPEED;
         e_send_uart1_char(str, messageForLeft);
       }
-      else{
-        //moveForward()
-        e_send_uart1_char(str, messageForward);
-
-      }
+      left_motor_set_speed(left_speed);
+      right_motor_set_speed(right_speed);
 
     }
 }
