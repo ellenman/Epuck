@@ -958,3 +958,1826 @@ make: Nothing to be done for 'all'.
 11:09:32 **** Incremental Build of configuration Default for project Exercise1 ****
 make all 
 make: Nothing to be done for 'all'.
+11:12:49 **** Build of configuration Default for project STM32L1xx-IRQ_STORM ****
+make -j20 all 
+Compiler Options
+arm-none-eabi-gcc -c -mcpu=cortex-m4 -O2 -ggdb -fomit-frame-pointer -falign-functions=16 -ffunction-sections -fdata-sections -fno-common -flto -Wall -Wextra -Wundef -Wstrict-prototypes -Wa,-alms=build/lst/ -DCORTEX_USE_FPU=FALSE -DTHUMB_PRESENT -mno-thumb-interwork -DTHUMB_NO_INTERWORKING -MD -MP -MF .dep/build.d -I. -I../../../../os/common/ports/ARMCMx/devices/STM32L1xx -I../../../../os/ext/CMSIS/include -I../../../../os/ext/CMSIS/ST -I../../../../os/rt/include -I../../../../os/rt/ports/ARMCMx -I../../../../os/rt/ports/ARMCMx/compilers/GCC -I../../../../os/hal/osal/rt -I../../../../os/hal/include -I../../../../os/hal/ports/common/ARMCMx -I../../../../os/hal/ports/STM32/STM32L1xx -I../../../../os/hal/ports/STM32/LLD -I../../../../os/hal/ports/STM32/LLD/DACv1 -I../../../../os/hal/ports/STM32/LLD/GPIOv2 -I../../../../os/hal/ports/STM32/LLD/I2Cv1 -I../../../../os/hal/ports/STM32/LLD/RTCv2 -I../../../../os/hal/ports/STM32/LLD/SPIv1 -I../../../../os/hal/ports/STM32/LLD/TIMv1 -I../../../../os/hal/ports/STM32/LLD/USARTv1 -I../../../../os/hal/ports/STM32/LLD/USBv1 -I../../../../os/hal/boards/ST_STM32L_DISCOVERY -I../../../../test/rt -I../../../../os/hal/lib/streams -I../../../../os/various -I../../../../testhal/common main.c -o main.o
+
+[1;34mCompiling crt0_v7m.s[0m
+[1;34mCompiling chcoreasm_v7m.s[0m
+[1;34mCompiling crt1.c[0m
+[1;34mCompiling vectors.c[0m
+[1;34mCompiling chsys.c[0m
+[1;34mCompiling chvt.c[0m
+[1;34mCompiling chdebug.c[0m
+[1;34mCompiling chschd.c[0m
+[1;34mCompiling chthreads.c[0m
+[1;34mCompiling chtm.c[0m
+[1;34mCompiling chdynamic.c[0m
+[1;34mCompiling chregistry.c[0m
+[1;34mCompiling chsem.c[0m
+[1;34mCompiling chmtx.c[0m
+[1;34mCompiling chcond.c[0m
+[1;34mCompiling chmsg.c[0m
+[1;34mCompiling chevents.c[0m
+[1;34mCompiling chmboxes.c[0m
+[1;34mCompiling chqueues.c[0m
+[1;34mCompiling chmemcore.c[0m
+[1;34mCompiling chheap.c[0m
+../../../../os/rt/src/chschd.c: In function 'wakeup':
+../../../../os/rt/src/chschd.c:290:5: warning: this statement may fall through [-Wimplicit-fallthrough=]
+     chSemFastSignalI(tp->p_u.wtsemp);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../os/rt/src/chschd.c:294:3: note: here
+   case CH_STATE_WTCOND:
+   ^~~~
+[1;34mCompiling chmempools.c[0m
+[1;34mCompiling chcore.c[0m
+[1;34mCompiling chcore_v7m.c[0m
+[1;34mCompiling osal.c[0m
+[1;34mCompiling hal.c[0m
+[1;34mCompiling st.c[0m
+[1;34mCompiling hal_queues.c[0m
+[1;34mCompiling gpt.c[0m
+[1;34mCompiling hal_mmcsd.c[0m
+[1;34mCompiling pal.c[0m
+[1;34mCompiling serial.c[0m
+[1;34mCompiling nvic.c[0m
+[1;34mCompiling stm32_dma.c[0m
+[1;34mCompiling hal_lld.c[0m
+[1;34mCompiling st_lld.c[0m
+[1;34mCompiling pal_lld.c[0m
+[1;34mCompiling gpt_lld.c[0m
+[1;34mCompiling serial_lld.c[0m
+[1;34mCompiling board.c[0m
+[1;34mCompiling test.c[0m
+[1;34mCompiling testthd.c[0m
+[1;34mCompiling testsem.c[0m
+[1;34mCompiling testmtx.c[0m
+[1;34mCompiling testmsg.c[0m
+[1;34mCompiling testmbox.c[0m
+[1;34mCompiling testevt.c[0m
+[1;34mCompiling testheap.c[0m
+[1;34mCompiling testpools.c[0m
+[1;34mCompiling testdyn.c[0m
+[1;34mCompiling testqueues.c[0m
+[1;34mCompiling testsys.c[0m
+[1;34mCompiling testbmk.c[0m
+[1;34mCompiling memstreams.c[0m
+[1;34mCompiling chprintf.c[0m
+[1;34mCompiling irq_storm.c[0m
+[1;34mCompiling main.c[0m
+[1;34mLinking build/ch.elf[0m
+[1;34mCreating build/ch.hex[0m
+[1;34mCreating build/ch.bin[0m
+[1;34mCreating build/ch.dmp[0m
+[1;34mCreating build/ch.list[0m
+
+   text	   data	    bss	    dec	    hex	filename
+   8528	    320	   4148	  12996	   32c4	build/ch.elf
+
+[1;34mDone[0m
+11:13:36 **** Incremental Build of configuration Default for project STM32L1xx-IRQ_STORM ****
+make -j20 all 
+make: Nothing to be done for 'all'.
+11:13:39 **** Incremental Build of configuration Default for project STM32L1xx-IRQ_STORM ****
+make -j20 all 
+make: Nothing to be done for 'all'.
+11:13:43 **** Incremental Build of configuration Default for project STM32L1xx-IRQ_STORM ****
+make -j20 all 
+make: Nothing to be done for 'all'.
+11:15:13 **** Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling crt0_v7m.s[0m
+[1;34mCompiling chcoreasm_v7m.s[0m
+[1;34mCompiling main.c[0m
+[1;34mCompiling spi3_slave_lld.c[0m
+[1;34mCompiling dcmi_lld.c[0m
+[1;34mCompiling dcmi.c[0m
+[1;34mCompiling spi3_slave.c[0m
+[1;34mCompiling audio_thread.c[0m
+[1;34mCompiling microphone.c[0m
+[1;34mCompiling mp45dt02_processing.c[0m
+[1;34mCompiling play_melody.c[0m
+[1;34mCompiling button.c[0m
+[1;34mCompiling camera.c[0m
+[1;34mCompiling dcmi_camera.c[0m
+[1;34mCompiling ov2640.c[0m
+[1;34mCompiling ov7670.c[0m
+[1;34mCompiling po6030.c[0m
+[1;34mCompiling po8030.c[0m
+[1;34mCompiling cmd.c[0m
+[1;34mCompiling Asercom.c[0m
+[1;34mCompiling Asercom2.c[0m
+[1;34mCompiling DataEEPROM.c[0m
+[1;34mCompiling e_I2C_protocol.c[0m
+[1;34mCompiling e_acc.c[0m
+[1;34mCompiling e_ad_conv.c[0m
+[1;34mCompiling e_micro.c[0m
+[1;34mCompiling e_prox.c[0m
+[1;34mCompiling e_lsm330.c[0m
+[1;34mCompiling e_common.c[0m
+[1;34mCompiling e_sound.c[0m
+[1;34mCompiling e_agenda.c[0m
+[1;34mCompiling e_led.c[0m
+[1;34mCompiling e_motors.c[0m
+[1;34mCompiling e_remote_control.c[0m
+[1;34mCompiling e_init_port.c[0m
+[1;34mCompiling e_uart_char.c[0m
+[1;34mCompiling utility.c[0m
+[1;34mCompiling exti.c[0m
+[1;34mCompiling flash.c[0m
+[1;34mCompiling i2c_bus.c[0m
+[1;34mCompiling ir_remote.c[0m
+[1;34mCompiling leds.c[0m
+[1;34mCompiling memory_protection.c[0m
+[1;34mCompiling motors.c[0m
+[1;34mCompiling panic.c[0m
+[1;34mCompiling selector.c[0m
+[1;34mCompiling battery_level.c[0m
+[1;34mCompiling ground.c[0m
+[1;34mCompiling imu.c[0m
+[1;34mCompiling mpu9250.c[0m
+[1;34mCompiling proximity.c[0m
+[1;34mCompiling serial_comm.c[0m
+[1;34mCompiling spi_comm.c[0m
+[1;34mCompiling sdio.c[0m
+[1;34mCompiling usbcfg.c[0m
+[1;34mCompiling uc_usage.c[0m
+[1;34mCompiling malloc_lock.c[0m
+[1;34mCompiling newlib_syscalls.c[0m
+[1;34mCompiling port.c[0m
+[1;34mCompiling communication.c[0m
+[1;34mCompiling config_flash_storage.c[0m
+[1;34mCompiling vl53l0x_api.c[0m
+[1;34mCompiling vl53l0x_api_calibration.c[0m
+[1;34mCompiling vl53l0x_api_core.c[0m
+[1;34mCompiling vl53l0x_api_ranging.c[0m
+[1;34mCompiling vl53l0x_api_strings.c[0m
+[1;34mCompiling vl53l0x_i2c_platform.c[0m
+[1;34mCompiling vl53l0x_platform.c[0m
+[1;34mCompiling VL53L0X.c[0m
+[1;34mCompiling serial_datagram.c[0m
+[1;34mCompiling cmp.c[0m
+[1;34mCompiling cmp_mem_access.c[0m
+[1;34mCompiling crc16.c[0m
+[1;34mCompiling crc32.c[0m
+[1;34mCompiling messagebus.c[0m
+[1;34mCompiling parameter.c[0m
+[1;34mCompiling parameter_msgpack.c[0m
+[1;34mCompiling parameter_print.c[0m
+[1;34mCompiling fat.c[0m
+[1;34mCompiling play_sound_file.c[0m
+[1;34mCompiling behaviors.c[0m
+[1;34mCompiling ircom.c[0m
+[1;34mCompiling ircomReceive.c[0m
+[1;34mCompiling ircomTools.c[0m
+[1;34mCompiling ircomMessages.c[0m
+[1;34mCompiling ircomSend.c[0m
+[1;34mCompiling transceiver.c[0m
+[1;34mCompiling crt1.c[0m
+[1;34mCompiling vectors.c[0m
+[1;34mCompiling chsys.c[0m
+[1;34mCompiling chdebug.c[0m
+[1;34mCompiling chvt.c[0m
+[1;34mCompiling chschd.c[0m
+[1;34mCompiling chthreads.c[0m
+[1;34mCompiling chtm.c[0m
+[1;34mCompiling chstats.c[0m
+[1;34mCompiling chdynamic.c[0m
+[1;34mCompiling chregistry.c[0m
+[1;34mCompiling chsem.c[0m
+[1;34mCompiling chmtx.c[0m
+[1;34mCompiling chcond.c[0m
+[1;34mCompiling chevents.c[0m
+[1;34mCompiling chmsg.c[0m
+[1;34mCompiling chmboxes.c[0m
+[1;34mCompiling chqueues.c[0m
+[1;34mCompiling chmemcore.c[0m
+[1;34mCompiling chheap.c[0m
+[1;34mCompiling chmempools.c[0m
+[1;34mCompiling chcore.c[0m
+[1;34mCompiling chcore_v7m.c[0m
+[1;34mCompiling osal.c[0m
+[1;34mCompiling hal.c[0m
+[1;34mCompiling hal_queues.c[0m
+[1;34mCompiling hal_mmcsd.c[0m
+[1;34mCompiling adc.c[0m
+[1;34mCompiling can.c[0m
+[1;34mCompiling dac.c[0m
+[1;34mCompiling ext.c[0m
+[1;34mCompiling gpt.c[0m
+[1;34mCompiling i2c.c[0m
+[1;34mCompiling i2s.c[0m
+[1;34mCompiling icu.c[0m
+[1;34mCompiling mac.c[0m
+[1;34mCompiling mmc_spi.c[0m
+[1;34mCompiling pal.c[0m
+[1;34mCompiling pwm.c[0m
+[1;34mCompiling rtc.c[0m
+[1;34mCompiling sdc.c[0m
+[1;34mCompiling serial.c[0m
+[1;34mCompiling serial_usb.c[0m
+[1;34mCompiling spi.c[0m
+[1;34mCompiling st.c[0m
+[1;34mCompiling uart.c[0m
+[1;34mCompiling usb.c[0m
+[1;34mCompiling nvic.c[0m
+[1;34mCompiling stm32_dma.c[0m
+[1;34mCompiling hal_lld.c[0m
+[1;34mCompiling adc_lld.c[0m
+[1;34mCompiling ext_lld_isr.c[0m
+[1;34mCompiling can_lld.c[0m
+[1;34mCompiling ext_lld.c[0m
+[1;34mCompiling mac_lld.c[0m
+[1;34mCompiling sdc_lld.c[0m
+[1;34mCompiling dac_lld.c[0m
+[1;34mCompiling pal_lld.c[0m
+[1;34mCompiling i2c_lld.c[0m
+[1;34mCompiling usb_lld.c[0m
+[1;34mCompiling rtc_lld.c[0m
+[1;34mCompiling i2s_lld.c[0m
+[1;34mCompiling spi_lld.c[0m
+[1;34mCompiling gpt_lld.c[0m
+[1;34mCompiling icu_lld.c[0m
+[1;34mCompiling pwm_lld.c[0m
+[1;34mCompiling st_lld.c[0m
+[1;34mCompiling serial_lld.c[0m
+[1;34mCompiling uart_lld.c[0m
+[1;34mCompiling board.c[0m
+[1;34mCompiling test.c[0m
+[1;34mCompiling testthd.c[0m
+[1;34mCompiling testsem.c[0m
+[1;34mCompiling testmtx.c[0m
+[1;34mCompiling testmsg.c[0m
+[1;34mCompiling testmbox.c[0m
+[1;34mCompiling testevt.c[0m
+[1;34mCompiling testheap.c[0m
+[1;34mCompiling testpools.c[0m
+[1;34mCompiling testdyn.c[0m
+[1;34mCompiling testqueues.c[0m
+[1;34mCompiling testsys.c[0m
+[1;34mCompiling testbmk.c[0m
+[1;34mCompiling shell.c[0m
+[1;34mCompiling memstreams.c[0m
+[1;34mCompiling chprintf.c[0m
+[1;34mCompiling fatfs_diskio.c[0m
+[1;34mCompiling fatfs_syscall.c[0m
+[1;34mCompiling ff.c[0m
+[1;34mCompiling unicode.c[0m
+[1;34mCompiling vm-buffer.c[0m
+[1;34mCompiling can-buffer.c[0m
+[1;34mCompiling can-net.c[0m
+[1;34mCompiling natives.c[0m
+[1;34mCompiling vm.c[0m
+[1;34mCompiling aseba_can_interface.c[0m
+[1;34mCompiling aseba_node.c[0m
+[1;34mCompiling skel_user.c[0m
+[1;34mCompiling aseba_bridge.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  47972	   2948	   6236	  57156	   df44	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:17:02 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:17:06 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:18:13 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c: In function 'main':
+main.c:36:5: error: too few arguments to function 'proximity_start'
+     proximity_start();
+     ^~~~~~~~~~~~~~~
+In file included from main.c:10:0:
+../e-puck2_main-processor/src/sensors/proximity.h:36:6: note: declared here
+ void proximity_start(uint8_t mode);
+      ^~~~~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:20:23 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c: In function 'main':
+main.c:36:5: error: too few arguments to function 'proximity_start'
+     proximity_start();
+     ^~~~~~~~~~~~~~~
+In file included from main.c:10:0:
+../e-puck2_main-processor/src/sensors/proximity.h:36:6: note: declared here
+ void proximity_start(uint8_t mode);
+      ^~~~~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:22:08 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  54852	   3052	   7780	  65684	  10094	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:22:10 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:23:57 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  54852	   3052	   7780	  65684	  10094	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:26:08 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:31:05 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c: In function 'main':
+main.c:46:38: error: 'calibratedValues' undeclared (first use in this function); did you mean 'calibrate_ir'?
+                                      calibratedValues[0], calibratedValues[1], calibratedValues[2], calibratedValues[3],
+                                      ^~~~~~~~~~~~~~~~
+                                      calibrate_ir
+main.c:46:38: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:31:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  54692	   3052	   7780	  65524	   fff4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:31:37 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:38:27 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheRight':
+main.c:66:15: warning: implicit declaration of function 'get_calibrated_proxx'; did you mean 'get_calibrated_prox'? [-Wimplicit-function-declaration]
+   int prox0 = get_calibrated_proxx(0);
+               ^~~~~~~~~~~~~~~~~~~~
+               get_calibrated_prox
+main.c: At top level:
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:110:44: warning: unused variable 'messageForward' [-Wunused-variable]
+       int messageForRight, messageForLeft, messageForward;
+                                            ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+build/obj/main.o: In function `objectOnTheRight':
+/home/acse-lab/Documents/Team1C/Exercise1//main.c:66: undefined reference to `get_calibrated_proxx'
+collect2: error: ld returned 1 exit status
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:244: build/Project_template.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:38:37 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:110:44: warning: unused variable 'messageForward' [-Wunused-variable]
+       int messageForRight, messageForLeft, messageForward;
+                                            ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  50052	   2988	   7084	  60124	   eadc	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:38:40 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:39:45 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:119:11: warning: variable 'right_speed' set but not used [-Wunused-but-set-variable]
+       int right_speed = MAX_SPEED;
+           ^~~~~~~~~~~
+main.c:118:11: warning: variable 'left_speed' set but not used [-Wunused-but-set-variable]
+       int left_speed = MAX_SPEED;
+           ^~~~~~~~~~
+main.c:112:44: warning: unused variable 'messageForward' [-Wunused-variable]
+       int messageForRight, messageForLeft, messageForward;
+                                            ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  50020	   2988	   7084	  60092	   eabc	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:39:47 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:40:55 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:120:11: warning: variable 'right_speed' set but not used [-Wunused-but-set-variable]
+       int right_speed = MAX_SPEED;
+           ^~~~~~~~~~~
+main.c:119:11: warning: variable 'left_speed' set but not used [-Wunused-but-set-variable]
+       int left_speed = MAX_SPEED;
+           ^~~~~~~~~~
+main.c:113:44: warning: unused variable 'messageForward' [-Wunused-variable]
+       int messageForRight, messageForLeft, messageForward;
+                                            ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52948	   2988	   7084	  63020	   f62c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:40:57 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:41:44 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52564	   2988	   6956	  62508	   f42c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:41:46 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:42:59 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:78:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52564	   2988	   6956	  62508	   f42c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:43:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:44:56 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:52:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:44:58 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:45:14 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:52:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:45:29 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:45:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:45:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:52:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52564	   2988	   6956	  62508	   f42c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:45:51 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:17 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:52:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:46:19 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:56 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:47:10 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:19:25: warning: extra tokens at end of #include directive
+ #include "serial_comm.h">
+                         ^
+main.c:29:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOn(){
+      ^~~~~~~~~
+main.c:33:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ void bodyLedOff(){
+      ^~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:52:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52564	   2988	   6956	  62508	   f42c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:47:12 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:47:27 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:48:11 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  54692	   3052	   7780	  65524	   fff4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:48:13 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:48:42 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:48:44 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:49:31 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:49:36 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:51:14 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:15:10: warning: missing terminating " character
+ #include "motors.h
+          ^
+main.c:15:10: error: #include expects "FILENAME" or <FILENAME>
+ #include "motors.h
+          ^~~~~~~~~
+main.c: In function 'main':
+main.c:40:5: warning: implicit declaration of function 'motors_init'; did you mean '_core_init'? [-Wimplicit-function-declaration]
+     motors_init();
+     ^~~~~~~~~~~
+     _core_init
+main.c:44:6: warning: implicit declaration of function 'left_motor_set_speed' [-Wimplicit-function-declaration]
+      left_motor_set_speed(300);
+      ^~~~~~~~~~~~~~~~~~~~
+main.c:45:6: warning: implicit declaration of function 'right_motor_set_speed' [-Wimplicit-function-declaration]
+      right_motor_set_speed(300);
+      ^~~~~~~~~~~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+11:51:36 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52980	   2988	   7084	  63052	   f64c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:51:38 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:52:22 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:52:30 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:52:48 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:53:15 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52980	   2988	   7084	  63052	   f64c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:53:18 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:54:41 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:54:42 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:55:18 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:56:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:58:17 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+11:58:19 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:59:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:59:36 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+11:59:43 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:00:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:00:05 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:00:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:00:16 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:00:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:01:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:02:00 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:02:03 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:02:12 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:02:15 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:03:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:03:14 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:03:17 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:03:44 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52580	   2988	   6956	  62524	   f43c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:03:46 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:04:52 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  52644	   2988	   6956	  62588	   f47c	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:04:55 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:06:35 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  54932	   2980	  15900	  73812	  12054	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:06:38 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:07:35 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  58500	   2980	  15964	  77444	  12e84	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:07:38 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:08:40 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:16:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheRight':
+main.c:18:15: warning: implicit declaration of function 'get_prox'; did you mean 'getopt'? [-Wimplicit-function-declaration]
+   int prox0 = get_prox(0);
+               ^~~~~~~~
+               getopt
+main.c: At top level:
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  58500	   2980	  15964	  77444	  12e84	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:08:43 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:08:53 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:08:56 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:08:59 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:09:03 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:11:17 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  59604	   3020	  16612	  79236	  13584	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:11:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:11:36 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:11:40 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:11:43 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:12:21 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:24:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:38:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  59460	   2988	  16596	  79044	  134c4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:12:23 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:12:46 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  59460	   2988	  16596	  79044	  134c4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:12:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:12:58 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:13:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:13:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  59524	   3020	  16612	  79156	  13534	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:13:40 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:13:43 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:13:45 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:14:10 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  59604	   3020	  16612	  79236	  13584	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:14:12 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:14:47 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63012	   3084	  17508	  83604	  14694	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:14:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:15:24 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:67:5: error: too many arguments to function 'calibrate_ir'
+     calibrate_ir(0);
+     ^~~~~~~~~~~~
+In file included from main.c:20:0:
+../e-puck2_main-processor/src/sensors/proximity.h:46:6: note: declared here
+ void calibrate_ir(void);
+      ^~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:15:31 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:26:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:40:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63076	   3084	  17508	  83668	  146d4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:15:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:16:38 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63076	   3084	  17508	  83668	  146d4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:16:41 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:16:45 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:16:47 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:17:47 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63332	   3084	  17508	  83924	  147d4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:17:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:18:44 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63236	   3084	  17508	  83828	  14774	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:18:54 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:18:57 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:19:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:19:03 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:19:27 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63236	   3084	  17508	  83828	  14774	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:19:32 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:20:22 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63236	   3084	  17508	  83828	  14774	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:21:03 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:78:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+main.c:78:27: warning: variable 'messageForLeft' set but not used [-Wunused-but-set-variable]
+      int messageForRight, messageForLeft, messageForward;
+                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63364	   3084	  17508	  83956	  147f4	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:21:05 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:21:09 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:21:11 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:22:08 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:78:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+main.c:78:27: warning: variable 'messageForLeft' set but not used [-Wunused-but-set-variable]
+      int messageForRight, messageForLeft, messageForward;
+                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63380	   3084	  17508	  83972	  14804	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:22:12 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:22:15 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:22:18 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:22:20 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:24:12 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:78:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63492	   3084	  17508	  84084	  14874	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:24:21 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:24:25 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:24:27 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:24:31 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:24:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:28:18 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:28:20 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:31:35 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:44:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:78:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63492	   3084	  17508	  84084	  14874	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:31:42 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:34:17 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:82:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63636	   3084	  17508	  84228	  14904	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:34:19 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:35:28 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:82:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63636	   3084	  17508	  84228	  14904	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:36:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:82:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63636	   3084	  17508	  84228	  14904	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:36:46 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:38:23 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheLeft':
+main.c:52:7: warning: unused variable 'prox7' [-Wunused-variable]
+   int prox7 = get_calibrated_prox(7);
+       ^~~~~
+main.c: In function 'main':
+main.c:82:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63636	   3084	  17508	  84228	  14904	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:38:25 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'main':
+main.c:82:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63636	   3084	  17508	  84228	  14904	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:40:09 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:15 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:26 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:28 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:36 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:41 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:46 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:49 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:40:59 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:41:01 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:41:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:41:19 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:00 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:03 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:09 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:11 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:23 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:33 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:42:44 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:43:08 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:43:32 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:43:34 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:49:04 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheLeft':
+main.c:57:47: error: 'str2' undeclared (first use in this function); did you mean 'str1'?
+                     int str_length1 = sprintf(str2, "Sensor 5: %d, Sensor6: %d, Sensor7: %d\n",
+                                               ^~~~
+                                               str1
+main.c:57:47: note: each undeclared identifier is reported only once for each function it appears in
+main.c: In function 'main':
+main.c:86:43: warning: unused variable 'messageForward' [-Wunused-variable]
+      int messageForRight, messageForLeft, messageForward;
+                                           ^~~~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:49:20 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheLeft':
+main.c:57:47: error: 'str2' undeclared (first use in this function); did you mean 'str1'?
+                     int str_length1 = sprintf(str2, "Sensor 5: %d, Sensor6: %d, Sensor7: %d\n",
+                                               ^~~~
+                                               str1
+main.c:57:47: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:49:29 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:48:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63652	   3084	  17508	  84244	  14914	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:49:31 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:49:35 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:49:38 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:49:57 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:50:00 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
+12:54:07 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c: In function 'objectOnTheRight':
+main.c:38:49: error: 'Sensor1' undeclared (first use in this function)
+                 int str_length2 = sprintf(str2, Sensor1: %d, Sensor2: %d\n",
+                                                 ^~~~~~~
+main.c:38:49: note: each undeclared identifier is reported only once for each function it appears in
+main.c:38:56: error: expected ')' before ':' token
+                 int str_length2 = sprintf(str2, Sensor1: %d, Sensor2: %d\n",
+                                                        ^
+main.c:38:73: error: stray '\' in program
+                 int str_length2 = sprintf(str2, Sensor1: %d, Sensor2: %d\n",
+                                                                         ^
+main.c:38:75: warning: missing terminating " character
+                 int str_length2 = sprintf(str2, Sensor1: %d, Sensor2: %d\n",
+                                                                           ^
+main.c:38:75: error: missing terminating " character
+                 int str_length2 = sprintf(str2, Sensor1: %d, Sensor2: %d\n",
+                                                                           ^~
+main.c: At top level:
+main.c:47:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectInTheFront(){
+      ^~~~~~~~~~~~~~~~
+make: *** [../e-puck2_main-processor/ChibiOS//os/common/ports/ARMCMx/compilers/GCC/rules.mk:217: build/obj/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+12:54:25 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+[1;34mCompiling main.c[0m
+main.c:30:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheRight(){
+      ^~~~~~~~~~~~~~~~
+main.c:47:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectOnTheLeft(){
+      ^~~~~~~~~~~~~~~
+main.c:64:6: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+ bool objectInTheFront(){
+      ^~~~~~~~~~~~~~~~
+[1;34mLinking build/Project_template.elf[0m
+[1;34mCreating build/Project_template.hex[0m
+[1;34mCreating build/Project_template.bin[0m
+[1;34mCreating build/Project_template.dmp[0m
+
+   text	   data	    bss	    dec	    hex	filename
+  63732	   3084	  17508	  84324	  14964	build/Project_template.elf
+[1;34mCreating build/Project_template.list[0m
+
+[1;34mDone[0m
+12:54:27 **** Incremental Build of configuration Default for project Exercise1 ****
+make all 
+make: Nothing to be done for 'all'.
