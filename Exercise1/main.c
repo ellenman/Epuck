@@ -28,31 +28,31 @@ bool objectOnTheRight(){
   int prox0 = get_calibrated_prox(0);
   int prox1 = get_calibrated_prox(1);
 
-  char str[100];
-  int str_length = sprintf(str, "Object on the Right  ---- Sensor0: %d, Sensor1: %d\n",
-                                       proxValues[0], proxValues[1]);
-  e_send_uart1_char(str, str_length);
-
   if(prox0 > 200 || prox1 > 200 ){
+    char str[100];
+    int str_length = sprintf(str, "Object on the Right  ---- Sensor0: %d, Sensor1: %d\n",
+                                         prox0, prox1);
+    e_send_uart1_char(str, str_length);
     detectObjectOnTheRight = true;
-  }
 
+  }
   return detectObjectOnTheRight;
 
 }
 
 bool objectOnTheLeft(){
   bool detectObjectOnTheLeft = false;
-  int prox6 = get_prox(6);
-  int prox7 = get_prox(7);
+  int prox6 = get_calibrated_prox(6);
+  int prox7 = get_calibrated_prox(7);
 
-  char str1[100];
-  int str_length1 = sprintf(str1, "Object on the Left  ---- Sensor6: %d, Sensor7: %d\n",
-                                       proxValues[6], proxValues[7]);
-  e_send_uart1_char(str1, str_length1);
+
 
   if(prox6 > 200 || prox7 > 200 ){
     detectObjectOnTheLeft = true;
+    char str1[100];
+    int str_length1 = sprintf(str1, "Object on the Left  ---- Sensor6: %d, Sensor7: %d\n",
+                                         prox6, prox7);
+    e_send_uart1_char(str1, str_length1);
   }
 
   return detectObjectOnTheLeft;
