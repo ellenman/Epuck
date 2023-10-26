@@ -1,6 +1,6 @@
-12:54:27 **** Incremental Build of configuration Default for project Exercise1 ****
+14:50:08 **** Incremental Build of configuration Default for project Exercise1 ****
 make all 
 make: Nothing to be done for 'all'.
 
-12:54:28 Build Finished. 0 errors, 0 warnings. (took 698ms)
+14:50:09 Build Finished. 0 errors, 0 warnings. (took 694ms)
 
