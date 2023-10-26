@@ -23,6 +23,36 @@ CONDVAR_DECL(bus_condvar);
 // Define the MAX_SPEED constant with a value of 300
 #define MAX_SPEED 300;
 
+
+void moveForward(){
+  left_motor_set_speed(MAX_SPEED);
+  right_motor_set_speed(MAX_SPEED);
+}
+
+void turnRight(){
+  left_motor_set_speed(MAX_SPEED);
+  right_motor_set_speed(-MAX_SPEED);
+}
+
+void turnLeft(){
+  left_motor_set_speed(-MAX_SPEED);
+  right_motor_set_speed(MAX_SPEED);
+}
+
+void stop(){
+  left_motor_set_speed(0);
+  right_motor_set_speed(0);
+}
+
+void bodyLedOn(){
+  set_body_led(1);
+}
+
+void bodyLedOff(){
+  set_body_led(0);
+}
+
+
 bool objectOnTheRight(){
   bool detectObjectOnTheRight = false;
   int prox0 = get_calibrated_prox(0);
@@ -76,20 +106,21 @@ int main(void)
     /* Infinite loop. */
     while (1) {
 
-      int left_speed = MAX_SPEED;
-      int right_speed = MAX_SPEED;
+
 
       if(objectOnTheRight()){
-        left_speed = -MAX_SPEED;
-        right_speed = MAX_SPEED;
+        turnLeft();
+        bodyLedOn();
       }
       else if(objectOnTheLeft()){
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
+        turnRight();
+        bodyLedOn();
+      }
+      else{
+        moveForward();
+        bodyLedOff();
       }
 
-      left_motor_set_speed(left_speed);
-      right_motor_set_speed(right_speed);
     	//waits 1 second
       chThdSleepMilliseconds(1000);
     }
