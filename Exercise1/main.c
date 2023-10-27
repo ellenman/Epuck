@@ -59,6 +59,23 @@ bool objectOnTheLeft(){
 
 }
 
+bool trapped(){
+  bool robotTrapped = false;
+  int prox6 = get_calibrated_prox(6);
+  int prox1 = get_calibrated_prox(1);
+
+  if(prox1 > 200 || prox6 > 200 ){
+    robotTrapped = true;
+    char str3[100];
+    int str_length3 = sprintf(str3, "Robot is Stuck  ---- Sensor1: %d, Sensor6: %d\n",
+                                         prox1, prox6);
+    e_send_uart1_char(str3, str_length3);
+  }
+
+  return robotTrapped;
+
+}
+
 int main(void)
 {
 
@@ -70,7 +87,7 @@ int main(void)
     proximity_start(0);
     calibrate_ir();
     motors_init();
-
+    int counter = 0;
 
 
     /* Infinite loop. */
@@ -78,8 +95,18 @@ int main(void)
 
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
+      if(trapped()){
+        if(counter >= 2){
+          counter = 0;
+        }
+        else{
+          left_speed = MAX_SPEED;
+          right_speed = -MAX_SPEED;
+          counter++;
+        }
 
-      if(objectOnTheRight()){
+      }
+      else if(objectOnTheRight()){
         left_speed = -MAX_SPEED;
         right_speed = MAX_SPEED;
       }
@@ -91,7 +118,7 @@ int main(void)
       left_motor_set_speed(left_speed);
       right_motor_set_speed(right_speed);
     	//waits 1 second
-      chThdSleepMilliseconds(1000);
+      chThdSleepMilliseconds(100);
     }
 }
 
