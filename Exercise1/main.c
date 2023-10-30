@@ -101,17 +101,17 @@ int main(void)
       if(randomCounter % 2 == 0){
         randomCounter ++ ;
         if(trapped()){
-          if(counter >= 10){
-            rotating = false;
-            counter = 0;
+          if(counter < 10){
             left_speed = MAX_SPEED;
-            right_speed = MAX_SPEED;
-          }
-          else{
-            left_speed = -MAX_SPEED;
-            right_speed = MAX_SPEED;
+            right_speed = -MAX_SPEED;
             rotating = true;
             counter++;
+          }
+          else{
+            left_speed = MAX_SPEED;
+            right_speed = MAX_SPEED;
+            rotating = false;
+            counter = 0;
           }
 
         }
@@ -126,28 +126,29 @@ int main(void)
         else{
           randomCounter ++ ;
           if(trapped()){
-            if(counter >= 10){
-              rotating = false;
-              counter = 0;
-              left_speed = MAX_SPEED;
-              right_speed = MAX_SPEED;
-            }
-            else{
+            if(counter < 10){
               left_speed = -MAX_SPEED;
               right_speed = MAX_SPEED;
               rotating = true;
               counter++;
             }
+            else{
+              left_speed = MAX_SPEED;
+              right_speed = MAX_SPEED;
+              rotating = false;
+              counter = 0;
+            }
 
-          }
-          else if(objectOnTheRight() && !rotating){
-            left_speed = -MAX_SPEED;
-            right_speed = MAX_SPEED;
           }
           else if(objectOnTheLeft() && !rotating){
             left_speed = MAX_SPEED;
             right_speed = -MAX_SPEED;
           }
+          else if(objectOnTheRight() && !rotating){
+            left_speed = -MAX_SPEED;
+            right_speed = MAX_SPEED;
+          }
+
         }
       }
       left_motor_set_speed(left_speed);
