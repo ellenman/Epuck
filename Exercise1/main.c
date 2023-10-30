@@ -23,91 +23,6 @@ CONDVAR_DECL(bus_condvar);
 // Define the MAX_SPEED constant with a value of 300
 #define MAX_SPEED 300;
 
-bool objectOnTheRight(){
-  bool detectObjectOnTheRight = false;
-  int prox1 = get_calibrated_prox(1);
-  int prox2 = get_calibrated_prox(2);
-
-
-
-  if(prox1 > 200 || prox2 > 200 ){
-    char str[100];
-    int str_length = sprintf(str, "Object on the Right  ---- Sensor1: %d, Sensor2: %d\n",
-                                         prox1, prox2);
-    e_send_uart1_char(str, str_length);
-    detectObjectOnTheRight = true;
-  }
-
-  return detectObjectOnTheRight;
-
-}
-
-bool objectOnTheLeft(){
-  bool detectObjectOnTheLeft = false;
-  int prox5 = get_calibrated_prox(5);
-  int prox6 = get_calibrated_prox(6);
-
-  if(prox5 > 200 || prox6 > 200 ){
-    char str1[100];
-    int str_length1 = sprintf(str1, "Object on the Left  ---- Sensor5: %d, Sensor6: %d\n",
-                                         prox5, prox6);
-    e_send_uart1_char(str1, str_length1);
-    detectObjectOnTheLeft = true;
-  }
-
-  return detectObjectOnTheLeft;
-
-}
-
-bool objectInTheFront(){
-  bool detectObjectInTheFront = false;
-  int prox0 = get_calibrated_prox(0);
-  int prox7 = get_calibrated_prox(7);
-
-
-
-  if(prox0 > 200 || prox7 > 200 ){
-    char str2[100];
-    int str_length2 = sprintf(str2, "Object in the front  ---- Sensor0: %d, Sensor7: %d\n",
-                                         prox0, prox7);
-    e_send_uart1_char(str2, str_length2);
-    detectObjectInTheFront = true;
-  }
-
-  return detectObjectInTheFront;
-}
-
-bool objectOnTheBackRight(){
-  bool detectObjectOnTheBackRight = false;
-  int prox3 = get_calibrated_prox(3);
-
-
-  if(prox3 > 200 ){
-    char str3[100];
-    int str_length3 = sprintf(str3, "Object on the back Right  ---- Sensor3: %d",
-                                         prox3);
-    e_send_uart1_char(str3, str_length3);
-    detectObjectOnTheBackRight = true;
-  }
-
-  return detectObjectOnTheBackRight;
-}
-
-bool objectOnTheBackLeft(){
-  bool detectObjectOnTheBackLeft = false;
-  int prox4 = get_calibrated_prox(4);
-
-  if(prox4 > 200 ){
-    char str4[100];
-    int str_length4 = sprintf(str4, "Object on the back left  ---- Sensor4: %d",
-                                         prox4);
-    e_send_uart1_char(str4, str_length4);
-    detectObjectOnTheBackLeft = true;
-  }
-
-  return detectObjectOnTheBackLeft;
-}
-
 int main(void)
 {
 
@@ -119,41 +34,86 @@ int main(void)
     proximity_start(0);
     calibrate_ir();
     motors_init();
-
+    bool objectOnRight = false;
+    bool objectOnLeft = false;
 
 
     /* Infinite loop. */
     while (1) {
 
+      // int prox0 = get_calibrated_prox(0);
+      // int prox1 = get_calibrated_prox(1);
+      // int prox2 = get_calibrated_prox(2);
+      // int prox3 = get_calibrated_prox(3);
+      // int prox4 = get_calibrated_prox(4);
+      // int prox5 = get_calibrated_prox(5);
+      // int prox6 = get_calibrated_prox(6);
+      // int prox7 = get_calibrated_prox(7);
+      //
+      // int front_distance = (prox0+prox1)/2;
+      // int left_distance = (prox5+prox6)/2;
+      // int right_distance = (prox1+prox2)/2;
+      // int back_left_distance = prox4;
+      // int back_right_distance = prox3;
+
+      int prox[8];
+      for (int i = 0; i < 8; i++) {
+          prox[i] = get_calibrated_prox(i);
+      }
+
+        // Use the sensor data for different purposes
+      int front_distance = (prox[0] + prox[1]) / 2;
+      int left_distance = (prox[5] + prox[6]) / 2;
+      int right_distance = (prox[1] + prox[2]) / 2;
+      int back_left_distance = prox[4];
+      int back_right_distance = prox[3];
+
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
 
-      if(objectInTheFront()){
+      if(front_distance > 200 && front_distance < 350){
         left_speed = 0;
         right_speed = 0;
+        objectOnRight = false;
+        objectOnLeft = false;
+      }
+      else if (front_distance > 350){
+        left_speed = - MAX_SPEED;
+        right_speed = - MAX_SPEED;
+        objectOnRight = false;
+        objectOnLeft = false;
+      }
+      else if (left_distance > 200){
+        objectOnLeft = true;
+      }
+      else if(right_distance > 200){
+        objectOnRight = true;
+      }
+      else if (back_left_distance > 200){
+        objectOnLeft = true;
+      }
+      else if(back_right_distance > 200){
+        objectOnRight = true;
       }
 
-      if(objectOnTheRight()){
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
-      }
-      else if(objectOnTheLeft()){
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
-      }
-      else if(objectOnTheBackRight()){
-        left_speed = MAX_SPEED;
-        right_speed = 0;
-      }
-      else if(objectOnTheBackLeft()){
-        left_speed = 0;
+      while (objectOnLeft){
+        left_speed = - MAX_SPEED;
         right_speed = MAX_SPEED;
+        objectOnLeft = false;
       }
+      while (objectOnRight){
+        left_speed = MAX_SPEED;
+        right_speed = - MAX_SPEED;
+        objectOnRight = false;
+      }
+
+
+
 
       left_motor_set_speed(left_speed);
       right_motor_set_speed(right_speed);
     	//waits 1 second
-      chThdSleepMilliseconds(1000);
+      chThdSleepMilliseconds(100);
     }
 }
 
