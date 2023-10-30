@@ -16,6 +16,9 @@
 
 #include "motors.h"
 
+#include "leds.h"
+#include "spi_comm.h"
+
 messagebus_t bus;
 MUTEX_DECL(bus_lock);
 CONDVAR_DECL(bus_condvar);
@@ -64,7 +67,7 @@ bool trapped(){
   int prox6 = get_calibrated_prox(6);
   int prox1 = get_calibrated_prox(1);
 
-  if(prox1 > 200 || prox6 > 200 ){
+  if(prox1 > 200 && prox6 > 200 ){
     robotTrapped = true;
     char str3[100];
     int str_length3 = sprintf(str3, "Robot is Stuck  ---- Sensor1: %d, Sensor6: %d\n",
@@ -89,13 +92,19 @@ int main(void)
     motors_init();
     int counter = 0;
     bool rotating = false;
+    clear_leds();
+    spi_comm_start();
 
 
     /* Infinite loop. */
     while (1) {
 
+    	set_body_led(1);
+
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
+      rotating = false;
+
       if(trapped()){
         if(counter < 10){
           left_speed = -MAX_SPEED;
@@ -112,10 +121,13 @@ int main(void)
 
       }
       else if(objectOnTheRight() && !rotating){
-        left_speed = -MAX_SPEED;
+      	set_body_led(0);
+
+		left_speed = -MAX_SPEED;
         right_speed = MAX_SPEED;
       }
       else if(objectOnTheLeft() && !rotating){
+    	set_body_led(0);
         left_speed = MAX_SPEED;
         right_speed = -MAX_SPEED;
       }
