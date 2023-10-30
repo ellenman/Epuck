@@ -88,6 +88,7 @@ int main(void)
     calibrate_ir();
     motors_init();
     int counter = 0;
+    bool rotating = false;
 
 
     /* Infinite loop. */
@@ -96,21 +97,25 @@ int main(void)
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
       if(trapped()){
-        if(counter >= 2){
+        if(counter >= 10){
+          rotating = false;
           counter = 0;
+          left_speed = MAX_SPEED;
+          right_speed = MAX_SPEED;
         }
         else{
-          left_speed = MAX_SPEED;
-          right_speed = -MAX_SPEED;
+          left_speed = -MAX_SPEED;
+          right_speed = MAX_SPEED;
+          rotating = true;
           counter++;
         }
 
       }
-      else if(objectOnTheRight()){
+      else if(objectOnTheRight() && !rotating){
         left_speed = -MAX_SPEED;
         right_speed = MAX_SPEED;
       }
-      else if(objectOnTheLeft()){
+      else if(objectOnTheLeft() && !rotating){
         left_speed = MAX_SPEED;
         right_speed = -MAX_SPEED;
       }
