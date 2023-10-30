@@ -97,17 +97,17 @@ int main(void)
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
       if(trapped()){
-        if(counter >= 10){
-          rotating = false;
-          counter = 0;
-          left_speed = MAX_SPEED;
-          right_speed = MAX_SPEED;
-        }
-        else{
+        if(counter < 10){
           left_speed = -MAX_SPEED;
           right_speed = MAX_SPEED;
           rotating = true;
           counter++;
+        }
+        else{
+          left_speed = MAX_SPEED;
+          right_speed = MAX_SPEED;
+          rotating = false;
+          counter = 0;
         }
 
       }
