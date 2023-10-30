@@ -89,6 +89,7 @@ int main(void)
     motors_init();
     int counter = 0;
     bool rotating = false;
+    int randomCounter = 0;
 
 
     /* Infinite loop. */
@@ -96,30 +97,59 @@ int main(void)
 
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
-      if(trapped()){
-        if(counter >= 10){
-          rotating = false;
-          counter = 0;
-          left_speed = MAX_SPEED;
-          right_speed = MAX_SPEED;
+
+      if(randomCounter % 2 == 0){
+        randomCounter ++ ;
+        if(trapped()){
+          if(counter >= 10){
+            rotating = false;
+            counter = 0;
+            left_speed = MAX_SPEED;
+            right_speed = MAX_SPEED;
+          }
+          else{
+            left_speed = -MAX_SPEED;
+            right_speed = MAX_SPEED;
+            rotating = true;
+            counter++;
+          }
+
         }
-        else{
+        else if(objectOnTheRight() && !rotating){
           left_speed = -MAX_SPEED;
           right_speed = MAX_SPEED;
-          rotating = true;
-          counter++;
         }
+        else if(objectOnTheLeft() && !rotating){
+          left_speed = MAX_SPEED;
+          right_speed = -MAX_SPEED;
+        }
+        else{
+          randomCounter ++ ;
+          if(trapped()){
+            if(counter >= 10){
+              rotating = false;
+              counter = 0;
+              left_speed = MAX_SPEED;
+              right_speed = MAX_SPEED;
+            }
+            else{
+              left_speed = -MAX_SPEED;
+              right_speed = MAX_SPEED;
+              rotating = true;
+              counter++;
+            }
 
+          }
+          else if(objectOnTheRight() && !rotating){
+            left_speed = -MAX_SPEED;
+            right_speed = MAX_SPEED;
+          }
+          else if(objectOnTheLeft() && !rotating){
+            left_speed = MAX_SPEED;
+            right_speed = -MAX_SPEED;
+          }
+        }
       }
-      else if(objectOnTheRight() && !rotating){
-        left_speed = -MAX_SPEED;
-        right_speed = MAX_SPEED;
-      }
-      else if(objectOnTheLeft() && !rotating){
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
-      }
-
       left_motor_set_speed(left_speed);
       right_motor_set_speed(right_speed);
     	//waits 1 second
