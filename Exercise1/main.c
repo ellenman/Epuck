@@ -15,14 +15,16 @@
 #include "sensors/proximity.h"
 
 #include "motors.h"
+#include "sensors/VL53L0X/VL53L0X.h"
 
 messagebus_t bus;
 MUTEX_DECL(bus_lock);
 CONDVAR_DECL(bus_condvar);
 
 // Define the MAX_SPEED constant with a value of 300
-#define MAX_SPEED 300;
+#define MAX_SPEED 500;
 
+//detetct using proximity sensor 1 and 2 if there is an object on the right side
 bool objectOnTheRight(){
   bool detectObjectOnTheRight = false;
   int prox1 = get_calibrated_prox(1);
@@ -42,6 +44,7 @@ bool objectOnTheRight(){
 
 }
 
+//detetct using proximity sensor 5 and 6 if there is an object on the left side
 bool objectOnTheLeft(){
   bool detectObjectOnTheLeft = false;
   int prox5 = get_calibrated_prox(5);
@@ -59,24 +62,7 @@ bool objectOnTheLeft(){
 
 }
 
-bool objectInTheFront(){
-  bool detectObjectInTheFront = false;
-  int prox0 = get_calibrated_prox(0);
-  int prox7 = get_calibrated_prox(7);
-
-
-
-  if(prox0 > 200 || prox7 > 200 ){
-    char str2[100];
-    int str_length2 = sprintf(str2, "Object in the front  ---- Sensor0: %d, Sensor7: %d\n",
-                                         prox0, prox7);
-    e_send_uart1_char(str2, str_length2);
-    detectObjectInTheFront = true;
-  }
-
-  return detectObjectInTheFront;
-}
-
+//detetct using proximity sensor 3 if there is an object on the back right side
 bool objectOnTheBackRight(){
   bool detectObjectOnTheBackRight = false;
   int prox3 = get_calibrated_prox(3);
@@ -93,6 +79,7 @@ bool objectOnTheBackRight(){
   return detectObjectOnTheBackRight;
 }
 
+//detetct using proximity sensor 4 if there is an object on the back left side
 bool objectOnTheBackLeft(){
   bool detectObjectOnTheBackLeft = false;
   int prox4 = get_calibrated_prox(4);
@@ -119,6 +106,7 @@ int main(void)
     proximity_start(0);
     calibrate_ir();
     motors_init();
+    VL53L0X_start();
 
 
 
@@ -127,27 +115,39 @@ int main(void)
 
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
+      //Get value from distance sensor
+      uint16_t distance_mm = VL53L0X_get_dist_mm();
+      double speed_increase_factor = 1.5;
 
-      if(objectInTheFront()){
+
+      if(distance_mm > 10 && distance_mm < 20){
         left_speed = 0;
         right_speed = 0;
       }
+      else if(distance_mm < 10){
+        left_speed = -MAX_SPEED;
+        right_speed = -MAX_SPEED ;
+      }
 
-      if(objectOnTheRight()){
+      else if(objectOnTheRight()){
         left_speed = MAX_SPEED;
         right_speed = -MAX_SPEED;
       }
       else if(objectOnTheLeft()){
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
+        left_speed = -MAX_SPEED;
+        right_speed = MAX_SPEED;
       }
       else if(objectOnTheBackRight()){
         left_speed = MAX_SPEED;
-        right_speed = 0;
+        right_speed = -MAX_SPEED;
       }
       else if(objectOnTheBackLeft()){
-        left_speed = 0;
+        left_speed = -MAX_SPEED;
         right_speed = MAX_SPEED;
+      }
+      else{
+        left_speed = MAX_SPEED * speed_increase_factor;
+        right_speed = MAX_SPEED * speed_increase_factor;
       }
 
       left_motor_set_speed(left_speed);
