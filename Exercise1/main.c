@@ -15,9 +15,8 @@
 #include "sensors/proximity.h"
 
 #include "motors.h"
+#include "sensors/VL53L0X/VL53L0X.h"
 
-#include "leds.h"
-#include "spi_comm.h"
 
 messagebus_t bus;
 MUTEX_DECL(bus_lock);
@@ -25,59 +24,6 @@ CONDVAR_DECL(bus_condvar);
 
 // Define the MAX_SPEED constant with a value of 300
 #define MAX_SPEED 300;
-
-bool objectOnTheRight(){
-  bool detectObjectOnTheRight = false;
-  int prox0 = get_calibrated_prox(0);
-  int prox1 = get_calibrated_prox(1);
-
-  if(prox0 > 200 || prox1 > 200 ){
-    char str[100];
-    int str_length = sprintf(str, "Object on the Right  ---- Sensor0: %d, Sensor1: %d\n",
-                                         prox0, prox1);
-    e_send_uart1_char(str, str_length);
-    detectObjectOnTheRight = true;
-
-  }
-  return detectObjectOnTheRight;
-
-}
-
-bool objectOnTheLeft(){
-  bool detectObjectOnTheLeft = false;
-  int prox6 = get_calibrated_prox(6);
-  int prox7 = get_calibrated_prox(7);
-
-
-
-  if(prox6 > 200 || prox7 > 200 ){
-    detectObjectOnTheLeft = true;
-    char str1[100];
-    int str_length1 = sprintf(str1, "Object on the Left  ---- Sensor6: %d, Sensor7: %d\n",
-                                         prox6, prox7);
-    e_send_uart1_char(str1, str_length1);
-  }
-
-  return detectObjectOnTheLeft;
-
-}
-
-bool trapped(){
-  bool robotTrapped = false;
-  int prox6 = get_calibrated_prox(6);
-  int prox1 = get_calibrated_prox(1);
-
-  if(prox1 > 200 && prox6 > 200 ){
-    robotTrapped = true;
-    char str3[100];
-    int str_length3 = sprintf(str3, "Robot is Stuck  ---- Sensor1: %d, Sensor6: %d\n",
-                                         prox1, prox6);
-    e_send_uart1_char(str3, str_length3);
-  }
-
-  return robotTrapped;
-
-}
 
 int main(void)
 {
@@ -90,47 +36,74 @@ int main(void)
     proximity_start(0);
     calibrate_ir();
     motors_init();
-    int counter = 0;
-    bool rotating = false;
-    clear_leds();
-    spi_comm_start();
+    VL53L0X_start();
+
+    bool objectOnRight = false;
+    bool objectOnLeft = false;
 
 
     /* Infinite loop. */
     while (1) {
 
-    	set_body_led(1);
+      uint16_t distance_mm = VL53L0X_get_dist_mm();
+      int prox[8];
+      for (int i = 0; i < 8; i++) {
+          prox[i] = get_calibrated_prox(i);
+      }
+
+        // Use the sensor data for different purposes
+      int front_distance = (prox[0] + prox[1]) / 2;
+      int left_distance = (prox[5] + prox[6]) / 2;
+      int right_distance = (prox[1] + prox[2]) / 2;
+      int back_left_distance = prox[4];
+      int back_right_distance = prox[3];
 
       int left_speed = MAX_SPEED;
       int right_speed = MAX_SPEED;
-      rotating = false;
 
-      if(trapped()){
-        if(counter < 10){
-          left_speed = -MAX_SPEED;
-          right_speed = MAX_SPEED;
-          rotating = true;
-          counter++;
-        }
-        else{
-          left_speed = MAX_SPEED;
-          right_speed = MAX_SPEED;
-          rotating = false;
-          counter = 0;
-        }
-
+      if(distance_mm > 10 && distance_mm < 20){
+        left_speed = 0;
+        right_speed = 0;
+        objectOnLeft = false;
+        objectOnRight = false;
       }
-      else if(objectOnTheRight() && !rotating){
-      	set_body_led(0);
 
-		left_speed = -MAX_SPEED;
-        right_speed = MAX_SPEED;
-      }
-      else if(objectOnTheLeft() && !rotating){
-    	set_body_led(0);
-        left_speed = MAX_SPEED;
+      else if(distance_mm < 10){
+        left_speed = -MAX_SPEED;
         right_speed = -MAX_SPEED;
+        objectOnLeft = true;
+        objectOnRight = false;
       }
+      else if (left_distance > 200){
+        objectOnLeft = true;
+      }
+      else if(right_distance > 200){
+        objectOnRight = true;
+      }
+      else if (back_left_distance > 200){
+        objectOnLeft = true;
+      }
+      else if(back_right_distance > 200){
+        objectOnRight = true;
+      }
+      else if(distance_mm > 100){
+        left_speed = MAX_SPEED * speed_increase_factor;
+        right_speed = MAX_SPEED * speed_increase_factor;
+      }
+
+      while (objectOnLeft && prox[7] < 150  ){
+        left_speed = - MAX_SPEED;
+        right_speed = MAX_SPEED;
+        objectOnLeft = false;
+      }
+      while (objectOnRight && prox[0]<150){
+        left_speed = MAX_SPEED;
+        right_speed = - MAX_SPEED;
+        objectOnRight = false;
+      }
+
+
+
 
       left_motor_set_speed(left_speed);
       right_motor_set_speed(right_speed);
