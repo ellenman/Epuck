@@ -50,6 +50,10 @@ int main(void)
         } else if(get_selector() == 2) {
           //Task2
         }
+        else if(get_selector() == 3){
+          left_motor_set_speed(0);
+          right_motor_set_speed(0);
+        }
         chThdSleepMilliseconds(100);
     }
 }
