@@ -32,7 +32,7 @@ bool objectOnTheRight(){
 
 
 
-  if(prox1 > 200 || prox2 > 200 ){
+if(prox1 > 200 || prox2 > 200 ){
     char str[100];
     int str_length = sprintf(str, "Object on the Right  ---- Sensor1: %d, Sensor2: %d\n",
                                          prox1, prox2);
@@ -109,8 +109,6 @@ int main(void)
     VL53L0X_start();
 
 
-
-    /* Infinite loop. */
     while (1) {
 
       int left_speed = MAX_SPEED;
@@ -145,15 +143,19 @@ int main(void)
         left_speed = -MAX_SPEED;
         right_speed = MAX_SPEED;
       }
-      else{
+      else if(distance_mm > 100){
         left_speed = MAX_SPEED * speed_increase_factor;
         right_speed = MAX_SPEED * speed_increase_factor;
+      }
+      else{
+        left_speed = MAX_SPEED;
+        right_speed = MAX_SPEED;
       }
 
       left_motor_set_speed(left_speed);
       right_motor_set_speed(right_speed);
-    	//waits 1 second
-      chThdSleepMilliseconds(1000);
+
+      chThdSleepMilliseconds(100);
     }
 }
 
