@@ -26,6 +26,35 @@ CONDVAR_DECL(bus_condvar);
 // Define the MAX_SPEED constant with a value of 300
 #define MAX_SPEED 300;
 
+void stop(){
+  left_motor_set_speed(0);
+  right_motor_set_speed(0);
+}
+
+void moveForward(){
+  left_motor_set_speed(MAX_SPEED);
+  right_motor_set_speed(MAX_SPEED);
+}
+
+void rotateLeft(){
+  left_motor_set_speed(-MAX_SPEED);
+  right_motor_set_speed(MAX_SPEED);
+}
+
+void rotateRight(){
+  left_motor_set_speed(MAX_SPEED);
+  right_motor_set_speed(-MAX_SPEED);
+}
+
+void trappedMovement(){
+  rotateRight();
+  chThdSleepMilliseconds(1000);
+  stop();
+  chThdSleepMilliseconds(1000);
+  rotateRight();
+
+}
+
 bool objectOnTheRight(){
   bool detectObjectOnTheRight = false;
   int prox0 = get_calibrated_prox(0);
@@ -90,8 +119,6 @@ int main(void)
     proximity_start(0);
     calibrate_ir();
     motors_init();
-    int counter = 0;
-    bool rotating = false;
     clear_leds();
     spi_comm_start();
 
@@ -99,41 +126,24 @@ int main(void)
     /* Infinite loop. */
     while (1) {
 
-    	set_body_led(1);
-
-      int left_speed = MAX_SPEED;
-      int right_speed = MAX_SPEED;
-      rotating = false;
-
+      set_body_led(1);
       if(trapped()){
-        if(counter < 10){
-          left_speed = -MAX_SPEED;
-          right_speed = MAX_SPEED;
-          rotating = true;
-          counter++;
-        }
-        else{
-          left_speed = MAX_SPEED;
-          right_speed = MAX_SPEED;
-          rotating = false;
-          counter = 0;
-        }
-
+        trappedMovement();
       }
-      else if(objectOnTheRight() && !rotating){
+
+      else if(objectOnTheRight()){
       	set_body_led(0);
-
-		left_speed = -MAX_SPEED;
-        right_speed = MAX_SPEED;
-      }
-      else if(objectOnTheLeft() && !rotating){
-    	set_body_led(0);
-        left_speed = MAX_SPEED;
-        right_speed = -MAX_SPEED;
+		    rotateLeft();
       }
 
-      left_motor_set_speed(left_speed);
-      right_motor_set_speed(right_speed);
+      else if(objectOnTheLeft()){
+    	   set_body_led(0);
+         rotateRight();
+      }
+      else{
+        moveForward();
+      }
+
     	//waits 1 second
       chThdSleepMilliseconds(100);
     }
