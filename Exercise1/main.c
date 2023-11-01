@@ -96,12 +96,12 @@ int main(void)
         objectOnRight = true;
       }
 
-      while (objectOnLeft){
+      while (objectOnLeft && prox0 < 200 && prox7 < 200){
         left_speed = - MAX_SPEED;
         right_speed = MAX_SPEED;
         objectOnLeft = false;
       }
-      while (objectOnRight){
+      while (objectOnRight && prox0 < 200 && prox7 < 200){
         left_speed = MAX_SPEED;
         right_speed = - MAX_SPEED;
         objectOnRight = false;
