@@ -1,3 +1,5 @@
-The epuck robot should be able to do two tasks:
-1. Explora the arena and collision avoidance.
-2. Follow an object and collision avoidance.
+This repository contains code for controlling the epuck robot to perform two tasks:
+
+1. Arena Exploration and Collision Avoidance: The epuck robot is programmed to autonomously explore its environment while avoiding collisions with obstacles within the arena.
+
+2. Object Following and Collision Avoidance: The epuck robot is designed to follow an object while ensuring collision avoidance with obstacles.
